@@ -2,8 +2,8 @@
     --background-color: #1F1E1E;
     --secondary-color: #343232;
     --highlight-color: #00B850;
-  }
+}
 
 body {
-    background-color: var(--background-color);
+    background-color: #1f1e1e;
 }
