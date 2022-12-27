@@ -1,9 +1,79 @@
-:root {
-    --background-color: #1F1E1E;
-    --secondary-color: #343232;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700&display=swap');
+:root{
+    --background-color: #121212;
+    --secondary-color: #1e1e1f;
+    --another-color: #2a2a2b;
+    --one-more-color: #202021;
+    --hint-color: #1e1e1f;
     --highlight-color: #00B850;
+    --text-color: #fff;
 }
 
-body {
-    background-color: #1f1e1e;
+body{
+    background-color: cover;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    margin-left: 6.5%;
+}
+.right,.left{
+    background-color: var(--secondary-color);
+    border-radius: 15px;
+}
+ul{
+    list-style-type: none;
+    display: inline-flex;
+}
+.nav-item-link:not(last-child) {
+    padding-left: 20px;
+}
+.nav-item-link {
+    text-decoration: none;
+    color: white;
+}
+.nav-item-link:hover {
+    color: rgb(210, 210, 210);
+}
+.nav {
+    margin-top: -8px;
+    padding-top: 10px;
+    padding-bottom: -15px;
+    border-radius: 0 15px 0 15px;
+    background-color: var(--another-color);
+}
+.img{
+    margin-bottom: 25px;
+    margin-left: 40px !important;
+    height: 220px;
+    width: 250px;
+    border-radius: 15px;
+    background-color: var(--another-color);
+}
+.job-title{
+    padding: 5px;
+    background-color: var(--another-color);
+    width: 175px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 200;
+}
+.icon-bg {
+    background-color: var(--one-more-color);
+    box-shadow: 2px 1px 1px var(--background-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+.head-pro {
+    font-size: 12px;
+    font-weight: 600;
+}
+.text-pro {
+    font-size: 12px;
+    font-weight: 200;
+}
+.pro-card{
+    line-height: 1;
 }
