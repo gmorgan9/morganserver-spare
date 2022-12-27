@@ -7,6 +7,7 @@
     --hint-color: #1e1e1f;
     --highlight-color: #00B850;
     --text-color: #fff;
+    --another-text-color: #c8c8c8;
 }
 
 body{
@@ -46,7 +47,7 @@ ul{
 .img{
     margin-bottom: 25px;
     margin-left: 40px !important;
-    height: 220px;
+    height: 250px;
     width: 250px;
     border-radius: 15px;
     background-color: var(--another-color);
@@ -76,4 +77,39 @@ ul{
 }
 .pro-card{
     line-height: 1;
+}
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+}
+.page-content{
+    margin-top: -25px;
+    padding-left: 25px;
+}
+.hr {
+    margin-bottom: 20px;
+    width: 45px;
+    border: none;
+    height: 5px;
+    border-radius: 15px;
+    background: var(--highlight-color);
+}
+.page-text {
+    font-weight: 200;
+    width: 98%;
+    color: var(--another-text-color);
+}
+.icon-img {
+    padding-left: 10px;
+    font-size: 65px;
+}
+.card{
+    width: 375px !important;
+    background-color: var(--one-more-color);
+    box-shadow: 2px 1px 1px var(--background-color);
+}
+.card-text{
+    font-size: 14px;
+    font-weight: 200;
 }
