@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700&display=swap');
 :root{
+    --new-color: rgba(0, 0, 0, 0.40);
+    --box-shadow: 0px 16px 30px 0px;
     --background-color: #121212;
     --secondary-color: #1e1e1f;
     --another-color: #2a2a2b;
@@ -8,6 +10,7 @@
     --highlight-color: #00B850;
     --text-color: #fff;
     --another-text-color: #c8c8c8;
+    /* --color-gradient-border-gray: linear-gradient(135deg, #404040 0%, rgba(64, 64, 64, 0) 48.44%); */
 }
 
 body{
@@ -22,6 +25,13 @@ body{
 .right,.left{
     background-color: var(--secondary-color);
     border-radius: 15px;
+    border: 1px solid #383838
+}
+.right {
+    height:fit-content !important;
+    -webkit-position: sticky;
+    position: sticky; 
+    top: 25px;
 }
 ul{
     list-style-type: none;
@@ -43,12 +53,12 @@ ul{
     padding-bottom: -15px;
     border-radius: 0 15px 0 15px;
     background-color: var(--another-color);
+    border: 1px solid #383838
 }
 .img{
     margin-bottom: 25px;
-    margin-left: 40px !important;
-    height: 250px;
-    width: 250px;
+    height: 175px;
+    width: 175px;
     border-radius: 15px;
     background-color: var(--another-color);
 }
@@ -62,9 +72,10 @@ ul{
 }
 .icon-bg {
     background-color: var(--one-more-color);
-    /* box-shadow: 2px 1px 1px var(--background-color); */
-    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 16px 30px 0px;
-    box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--box-shadow) var(--new-color);
+    -webkit-box-shadow: var(--box-shadow) var(--new-color);
+    /* -webkit-box-shadow: 0px 16px 30px 0px rgba(0, 0, 0, 0.25); */
+    /* box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.25); */
     width: 40px;
     height: 40px;
     border-radius: 10px;
@@ -81,8 +92,9 @@ ul{
     line-height: 1;
 }
 .profile-img {
-    width: 250px;
-    height: 250px;
+    margin-left: -8% !important;
+    width: 175px;
+    height: 175px;
     border-radius: 15px;
 }
 .page-content{
@@ -109,7 +121,8 @@ ul{
 .card{
     width: 375px !important;
     background-color: var(--one-more-color);
-    box-shadow: 2px 1px 1px var(--background-color);
+    box-shadow: var(--box-shadow) var(--new-color);
+    -webkit-box-shadow: var(--box-shadow) var(--new-color);
 }
 .card-text{
     font-size: 14px;
