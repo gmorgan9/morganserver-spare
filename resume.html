@@ -349,15 +349,9 @@
     <!-- close boostrap script -->
 
 <script>
-jQuery(function($) {
-  var path = window.location.href; 
-  // because the 'href' property of the DOM element is the absolute path
-  $('ul li a').each(function() {
-    if (this.href === path) {
-      $(this).addClass('active');
-    }
-  });
-});
+$('#nav-link').filter(function(){
+  return this.href === location.href;
+}).addClass('active');
 </script>
 </body>
 </html>
