@@ -22,58 +22,356 @@
         <link rel="stylesheet" href="style.css">
     <!-- end custom styles -->
 
-    <style>
-        .resume .resume-title {
-    font-size: 26px;
-    font-weight: 700;
-    margin-top: 20px;
-    margin-bottom: 20px;
+<style>
+:root {
+  --font-family: 'Poppins', sans-serif;
+  --font-base-size: 15px;
+  --font-mobile-size: 14px;
+  --color-heading: #FCFCFC;
+  --color-paragraph: #D6D6D6;
+  --color-border: #383838;
+  --color-bg: #121212;
+  --color-surface-1: #1e1e1f;
+  --color-surface-2: #2a2a2b;
+  --color-surface-3: #202021;
+  --color-accent: #00B850;
+  --color-error: #B84C4C;
+  --color-gradient: linear-gradient(137.84deg, #00B850 26.31%, #FFBC5E 93.75%);
+  --color-gradient-soft: linear-gradient(135deg, rgba(255, 218, 109, 0.0375) 0%, rgba(255, 189, 94, 0) 100%), #1E1E1F;
+  --color-gradient-text: linear-gradient(90deg, #00B850, #FFBC5E);
+  --color-gradient-border: linear-gradient(155deg, #00b850 0%, rgba(255, 191, 96, 0) 50%);
+  --color-gradient-border-gray: linear-gradient(135deg, #404040 0%, rgba(64, 64, 64, 0) 48.44%);
+  --color-gradient-gray: linear-gradient(137.84deg, #3F3F40 2.69%, #303030 93.75%);
+  --color-gradient-icon: linear-gradient(135deg, rgba(255, 218, 109, 0.25) 0%, rgba(255, 189, 94, 0) 59.86%), #202021;
+  --color-btn: linear-gradient(135deg, rgba(45, 45, 46, 0.25) 0%, rgba(27, 27, 28, 0) 100%), #202021;
+  --box-shadow-24: -4px 8px 24px rgba(0, 0, 0, 0.25);
+  --box-shadow-30: 0px 16px 30px rgba(0, 0, 0, 0.25);
+  --box-shadow-40: 0px 16px 40px rgba(0, 0, 0, 0.25);
+  --box-shadow-50: 0px 25px 50px rgba(0, 0, 0, 0.15);
+  --box-shadow-80: 0px 24px 80px rgba(0, 0, 0, 0.7);
+  --radius-32: 32px;
+  --radius-20: 20px;
+  --radius-18: 18px;
+  --radius-16: 16px;
+  --radius-14: 14px;
+  --radius-12: 12px;
+  --radius-8: 8px;
+}
+
+
+
+.box {
+  background: var(--color-gradient-border);
+  position: relative;
+  z-index: 0;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  background: var(--color-gradient-soft);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.box--s2 {
+  background: var(--color-gradient-border-gray);
+}
+
+.box--s2::before {
+  background-image: var(--color-btn) !important;
+  background-color: var(--color-surface-3) !important;
+}
+
+.box-outer {
+  background-color: var(--color-surface-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-20);
+  -webkit-box-shadow: var(--box-shadow-24);
+          box-shadow: var(--box-shadow-24);
+  padding: 1.875rem;
+  position: relative;
+}
+
+@media only screen and (max-width: 580px) {
+  .box-outer {
+    padding: 0.9375rem;
   }
-  .resume .resume-item {
-    padding: 0 0 20px 20px;
-    margin-top: -2px;
-    border-left: 2px solid #1f5297;
-    position: relative;
+}
+@media only screen and (max-width: 580px) {
+  .box-inner {
+    border-radius: var(--radius-14);
+    -webkit-box-shadow: var(--box-shadow-30);
+            box-shadow: var(--box-shadow-30);
+    padding: 1.25rem;
+    margin-bottom: 0.9375rem;
   }
-  .resume .resume-item h4 {
-    line-height: 18px;
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-family: "Poppins", sans-serif;
-    margin-bottom: 10px;
+}
+
+.box-inner {
+  border-radius: var(--radius-16);
+  -webkit-box-shadow: var(--box-shadow-50);
+          box-shadow: var(--box-shadow-50);
+  padding: 1.875rem;
+  margin-bottom: 1.875rem;
+}
+
+.icon-box {
+  font-size: 1.125rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: var(--radius-12);
+  -webkit-box-shadow: var(--box-shadow-30);
+          box-shadow: var(--box-shadow-30);
+  line-height: 1;
+  margin-right: 1rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.icon-box > * {
+  min-width: 0;
+}
+
+.icon-box::before {
+  background: var(--color-gradient-icon);
+}
+
+.icon-box .font-icon {
+  background: var(--color-gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media only screen and (max-width: 580px) {
+  .icon-box {
+    font-size: 1rem;
+    border-radius: var(--radius-8);
+    -webkit-box-shadow: var(--box-shadow-24);
+            box-shadow: var(--box-shadow-24);
+    height: 1.875rem;
+    width: 1.875rem;
   }
-  .resume .resume-item h5 {
-    font-size: 16px;
-    background: #e4edf9;
-    padding: 5px 15px;
-    display: inline-block;
-    font-weight: 600;
-    margin-bottom: 10px;
+}
+
+
+.timeline {
+  margin-top: 1.8125rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  border-left-color: var(--color-border);
+  border-left-width: 1px;
+  border-left-style: solid;
+  height: 3.75rem;
+  width: 1px;
+  position: absolute;
+  top: -1.875rem;
+}
+
+@media only screen and (max-width: 580px) {
+  .timeline {
+    padding-left: 0.90625rem;
   }
-  .resume .resume-item ul {
-    padding-left: 20px;
-    display: list-item;
+}
+
+.timeline__item {
+  border-left-color: var(--color-border);
+  border-left-width: 1px;
+  border-left-style: solid;
+  padding-bottom: 0.5625rem;
+  padding-left: 2.5rem;
+  position: relative;
+}
+
+.timeline__item::before {
+  content: '';
+  background: var(--color-gradient-text);
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(255, 219, 110, 0.1);
+          box-shadow: 0 0 0 0.25rem rgba(255, 219, 110, 0.1);
+  border-radius: 50%;
+  position: absolute;
+  top: 0.0625rem;
+  left: -0.3125rem;
+  height: 0.5625rem;
+  width: 0.5625rem;
+}
+
+.timeline__item:last-child {
+  border: 0;
+}
+
+@media only screen and (max-width: 580px) {
+  .timeline__item {
+    padding-left: 1.875rem;
   }
-  .resume .resume-item ul li {
-    list-style-type: disc;
-    /* display: list-item; */
-    padding-bottom: 10px;
+  .timeline__item::before {
+    left: -0.21875rem;
+    height: 0.375rem;
+    width: 0.375rem;
   }
-  .resume .resume-item:last-child {
-    padding-bottom: 0;
+}
+
+.timeline__title {
+  margin-bottom: 0;
+  position: relative;
+  top: -0.3125rem;
+}
+
+.timeline__period {
+  background: var(--color-gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 400;
+}
+
+.timeline__description {
+  margin-top: 0.25rem;
+}
+
+@media only screen and (max-width: 580px) {
+  .timeline__description {
+    margin-top: 0.1875rem;
   }
-  .resume .resume-item::before {
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 50px;
-    left: -9px;
-    top: 0;
-    background: #fff;
-    border: 2px solid #1f5297;
+}
+
+.title--h1 {
+  font-size: 2rem;
+  margin-bottom: 1.0625rem;
+}
+
+@media only screen and (max-width: 580px) {
+  .title--h1 {
+    font-size: 1.5rem;
   }
+}
+
+.title--h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+@media only screen and (max-width: 580px) {
+  .title--h2 {
+    font-size: 1.125rem;
+  }
+}
+
+.title--h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 580px) {
+  .title--h3 {
+    font-size: 1rem;
+  }
+}
+
+.title--h4 {
+  font-size: 1rem;
+  margin-bottom: 0.8125rem;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 580px) {
+  .title--h4 {
+    font-size: 0.875rem;
+  }
+}
+
+.title--h5 {
+  font-size: 0.875rem;
+}
+
+@media only screen and (max-width: 580px) {
+  .title--h5 {
+    font-size: 0.75rem;
+  }
+}
+
+.title--h6 {
+  font-size: 0.75rem;
+}
+
+@media only screen and (max-width: 580px) {
+  .title--h6 {
+    font-size: 0.625rem;
+  }
+}
+
+.title--center {
+  text-align: center;
+}
+
+.title--tone {
+  background: var(--color-gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-icon {
+  margin-right: 0.5rem;
+  margin-top: -0.25rem;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+@media only screen and (max-width: 580px) {
+  .title-icon {
+    height: 2.08333rem;
+    width: 2.08333rem;
+  }
+}
+
+.title__separate {
+    margin-top: -65px;
+  margin-bottom: 2.3125rem;
+  position: relative;
+}
+
+.title__separate::before {
+  content: '';
+  background: var(--color-gradient);
+  border-radius: 0.5rem;
+  height: 0.3125rem;
+  position: absolute;
+  bottom: -1.0625rem;
+  left: 0;
+  width: 2.5rem;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 580px) {
+  .title__separate {
+    margin-bottom: 1.5rem;
+  }
+  .title__separate::before {
+    height: 0.1875rem;
+    bottom: -0.625rem;
+    width: 1.875rem;
+  }
+}
+
+
+
     </style>
 </head>
 <body>
@@ -96,54 +394,95 @@
                 </div>
             </div>
             <div class="page-content">
-                <h2 class="page-header">
-                    Resume
-                </h2>
-                <div class="hr"></div>
 
-                <div class="resume col-lg-6">
-                    <h3 class="resume-title">
-                        <span class="box--s2">
-                            <i data-feather="briefcase" style="color: green;"></i>
-                        </span>
-                        Experience
-                    </h3>
-                    <div class="resume-item">
-                      <h4>Network Operations Engineer Intern</h4>
-                      <h5>Apr 2022 - Present</h5>
-                      <p><em>The Church of Jesus Christ of Latter-Day Saints, Riverton, UT </em></p>
-                      <ul>
-                        <li>Monitor worldwide network of applications, servers, networking, and storage devices</li>
-                        <li>Monitor and handle major incident coordination in the resolution of detected alerts </li>
-                        <li>Manage and escalate incoming alerts from applications, servers, networks, and storage devices</li>
-                      </ul>
-                    </div>
-                    <div class="resume-item">
-                      <h4>Student Systems Engineer</h4>
-                      <h5>Feb 2022 - Apr 2022</h5>
-                      <p><em>Brigham Young University Office of Information Technology, Provo, UT</em></p>
-                      <ul>
-                        <li>Maintain, patch and troubleshoot ESXi hypervisors, vCenter technology, and VMs</li>
-                        <li>Work with data center technology including storage, networking, and virtualization environments</li>
-                        <li>Maintain, patch, and troubleshoot Dell MX chassis, blades, and network switches</li>
-                      </ul>
-                    </div>
-                    <div class="resume-item">
-                        <h4>Computer Support Representative</h4>
-                        <h5>Aug 2021 - Feb 2022</h5>
-                        <p><em>Brigham Young University Marriott School of Business, Provo, UT</em></p>
-                        <ul>
-                          <li>Analyze and diagnose software and hardware issues for 261 faculty members within the school</li>
-                          <li>Keep updated inventory of all affiliated devices, including software, warranty, and hardware updates</li>
-                          <li>Organize each support ticket by level of urgency and assign projects based on expertise</li>
-                        </ul>
-                      </div>
-                  </div>
+                <div class="mb-5"></div>
+
+                <!-- About -->
+						<div class="pb-3">
+		                    <h1 class="title title--h1 title__separate">Resume</h1>
+					    </div>
+						
+						<!-- Experience -->
+						<h2 class="title title--h2"><span class="box box--s2 icon-box"><i class="font-icon feathericon-book-open"></i></span>Education</h2>
+						<div class="timeline">
+							<!-- Item -->
+							<article class="timeline__item">
+								<h5 class="title title--h4 timeline__title">University School of the Arts</h5>
+								<span class="timeline__period">2007 — 2009</span>
+								<p class="timeline__description">Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.</p>
+							</article>
+                                        
+							<!-- Item -->
+							<article class="timeline__item">
+								<h5 class="title title--h4 timeline__title">New York Academy of Art</h5>
+								<span class="timeline__period">2005 — 2007</span>
+								<p class="timeline__description">Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est omnis..</p>
+							</article>
+                                        
+							<!-- Item -->
+							<article class="timeline__item">
+								<h5 class="title title--h4 timeline__title">High School of Art and Design</h5>
+								<span class="timeline__period">2003 — 2005</span>
+								<p class="timeline__description">Duis aute irure dolor in reprehenderit in voluptate, quila voluptas  mag odit aut fugit, sed consequuntur magni dolores eos.</p>
+							</article>
+						</div>
+
+						<h2 class="title title--h2"><span class="box box--s2 icon-box"><i class="font-icon feathericon-briefcase"></i></span>Experience</h2>
+						<div class="timeline">
+							<!-- Item -->
+							<article class="timeline__item">
+								<h5 class="title title--h4 timeline__title">Creative Director</h5>
+								<span class="timeline__period">2015 — Present</span>
+								<p class="timeline__description">Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas molestias exceptur.</p>
+							</article>
+                                        
+							<!-- Item -->
+							<article class="timeline__item">
+								<h5 class="title title--h4 timeline__title">Art Director</h5>
+								<span class="timeline__period">2013 — 2015</span>
+								<p class="timeline__description">Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.</p>
+							</article>
+                                        
+							<!-- Item -->
+							<article class="timeline__item">
+								<h5 class="title title--h4 timeline__title">Web Designer</h5>
+								<span class="timeline__period">2010 — 2013</span>
+								<p class="timeline__description">Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.</p>
+							</article>
+						</div>
+						
+						<!-- Skills -->
+						<h2 class="title title--h2 mt-3">My Skills</h2>
+						<div class="box box--s2 box-inner mb-0">
+							<!-- Web Design -->
+							<div class="progress">
+								<div class="progress-text"><span>Web Design</span> 80%</div>
+                                <div class="progress-bar"><span role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></span></div>
+                            </div>
+
+							<!-- Web Design -->
+							<div class="progress">
+								<div class="progress-text"><span>Graphic Design</span> 75%</div>
+                                <div class="progress-bar"><span role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></span></div>
+                            </div>
+
+							<!-- Web Design -->
+							<div class="progress">
+								<div class="progress-text"><span>Branding</span> 90%</div>
+                                <div class="progress-bar"><span role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></span></div>
+                            </div>
+
+							<!-- Web Design -->
+							<div class="progress">
+								<div class="progress-text"><span>WordPress</span> 50%</div>
+                                <div class="progress-bar"><span role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></span></div>
+                            </div>
+						</div>
+			</div>
 
 
 
                 <div class="mb-5"></div>
-            </div> 
           </div> 
           <!-- end left -->
 

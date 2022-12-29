@@ -10,8 +10,7 @@
     --highlight-color: #00B850;
     --text-color: #fff;
     --another-text-color: #c8c8c8;
-    --color-surface-3: #202021;
-    --color-btn: linear-gradient(135deg, rgba(45, 45, 46, 0.25) 0%, rgba(27, 27, 28, 0) 100%), #202021;
+    
     /* --color-gradient-border-gray: linear-gradient(135deg, #404040 0%, rgba(64, 64, 64, 0) 48.44%); */
 }
 
@@ -152,10 +151,7 @@ li .active:hover {
 }
 
 
-.box--s2::before {
-    background-image: var(--color-btn) !important;
-    background-color: var(--color-surface-3) !important;
-  }
+
 
 /* resume */
 
