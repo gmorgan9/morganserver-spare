@@ -12,13 +12,20 @@
 //     current[0].className = current[0].className.replace(" active", "");
 //     this.className += " active";
 //   });
-// }
+// // }
 
-$(document).ready(function() {
-  var current = document.getElementsByClassName("nav-item-link");
-  $(current).click(function () {
-      $(this).addClass(" active");
-      $(current).not(this).removeClass(" active");
-  });
+// $(document).ready(function() {
+//   var current = document.getElementsByClassName("nav-item-link");
+//   $(current).click(function () {
+//       $(this).addClass(" active");
+//       $(current).not(this).removeClass(" active");
+//   });
   
-  });
+//   });
+
+  $(document).ready(function() {
+    $(document).on('click', '.menu',function () {
+        $('.nav-item-link').removeClass(" active");
+        $(this).addClass(" active");
+    });
+});
