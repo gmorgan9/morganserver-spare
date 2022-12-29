@@ -350,17 +350,23 @@
 
 <script>
 
-$(function(){
-    var current = location.pathname;
-    var doc = document.getElementById("nav-link")
-    $(doc).each(function(){
-        var $this = $(this);
-        // if the current path is like this link, make it active
-        if($this.attr('href').indexOf(current) !== -1){
-            $this.addClass(' active');
-        }
-    })
-})
+
+    // Get the container element
+    var btnContainer = document.getElementById("myDIV");
+
+// Get all buttons with class="btn" inside the container
+var btns = btnContainer.getElementsByClassName("btn");
+
+// Loop through the buttons and add the active class to the current/clicked button
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    if($this.attr('href').indexOf(current) !== -1){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+    }
+  });
+}
 </script>
 </body>
 </html>
