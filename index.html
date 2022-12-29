@@ -351,7 +351,7 @@
 <script>
 var currentPage = location.pathname;
 console.log(currentPage);
-if (currentPage = "/") {
+if (currentPage = "morganserver.com/") {
     console.log("yes");
 }
 
@@ -362,7 +362,7 @@ var btnContainer = document.getElementById("nav");
 var btns = btnContainer.getElementsByClassName("nav-item-link");
 
 // Loop through the buttons and add the active class to the current/clicked button
-if(currentPage = "/") {
+if(currentPage = "morganserver.com/") {
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function() {
     var current = document.getElementsByClassName("active");
