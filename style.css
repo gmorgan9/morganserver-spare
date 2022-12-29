@@ -134,3 +134,10 @@ ul{
     box-shadow: var(--box-shadow) var(--new-color);
     -webkit-box-shadow: var(--box-shadow) var(--new-color);
 }
+
+li > .active {
+    color: var(--highlight-color);
+}
+li > .active:hover {
+    color: var(--highlight-color);
+}
