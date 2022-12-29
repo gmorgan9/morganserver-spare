@@ -15,9 +15,10 @@
 // }
 
 $(document).ready(function() {
-  $(".nav-item-link").click(function () {
+  var current = document.getElementsByClassName("nav-item-link");
+  $(current).click(function () {
       $(this).addClass("active");
-      $(".nav-item-link").not(this).removeClass("active");
+      $(current).not(this).removeClass("active");
   });
   
   });
