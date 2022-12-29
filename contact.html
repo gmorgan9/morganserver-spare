@@ -351,7 +351,8 @@
 <script>
 $(function(){
     var current = location.pathname;
-    $('.nav-item-link').each(function(){
+    var doc = document.getElementById("nav-link")
+    $(doc).each(function(){
         var $this = $(this);
         // if the current path is like this link, make it active
         if($this.attr('href').indexOf(current) !== -1){
