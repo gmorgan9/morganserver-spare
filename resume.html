@@ -36,13 +36,13 @@
   --color-surface-3: #202021;
   --color-accent: #00B850;
   --color-error: #B84C4C;
-  --color-gradient: linear-gradient(137.84deg, #00B850 26.31%, #FFBC5E 93.75%);
+  --color-gradient: linear-gradient(137.84deg, #00B850 26.31%, #009741 93.75%);
   --color-gradient-soft: linear-gradient(135deg, rgba(255, 218, 109, 0.0375) 0%, rgba(255, 189, 94, 0) 100%), #1E1E1F;
-  --color-gradient-text: linear-gradient(90deg, #00B850, #FFBC5E);
+  --color-gradient-text: linear-gradient(90deg, #00B850, #009741);
   --color-gradient-border: linear-gradient(155deg, #00b850 0%, rgba(255, 191, 96, 0) 50%);
   --color-gradient-border-gray: linear-gradient(135deg, #404040 0%, rgba(64, 64, 64, 0) 48.44%);
   --color-gradient-gray: linear-gradient(137.84deg, #3F3F40 2.69%, #303030 93.75%);
-  --color-gradient-icon: linear-gradient(135deg, rgba(255, 218, 109, 0.25) 0%, rgba(255, 189, 94, 0) 59.86%), #202021;
+  --color-gradient-icon: linear-gradient(135deg, rgba(109, 255, 119, 0.25) 0%, rgba(255, 189, 94, 0) 59.86%), #202021;
   --color-btn: linear-gradient(135deg, rgba(45, 45, 46, 0.25) 0%, rgba(27, 27, 28, 0) 100%), #202021;
   --box-shadow-24: -4px 8px 24px rgba(0, 0, 0, 0.25);
   --box-shadow-30: 0px 16px 30px rgba(0, 0, 0, 0.25);
@@ -122,8 +122,8 @@
 
 .icon-box {
   font-size: 1.125rem;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
+  /* display: -webkit-inline-box;
+  display: -ms-inline-flexbox; */
   display: inline-flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -145,7 +145,7 @@
 }
 
 .icon-box::before {
-  background: var(--color-gradient-icon);
+  color: var(--color-gradient-icon);
 }
 
 .icon-box .font-icon {
@@ -243,6 +243,7 @@
 
 .timeline__description {
   margin-top: 0.25rem;
+  font-size: 14px;
 }
 
 @media only screen and (max-width: 580px) {
@@ -453,51 +454,67 @@
 					    </div>
 						
 						<!-- Experience -->
-						<h2 class="title title--h2 d-flex align-items-center"><span class="box box--s2 icon-box"><i class="font-icon feathericon-book-open"></i></span>Education</h2>
+						<h2 class="title title--h2 d-flex align-items-center"><span class="box box--s2 icon-box"><i data-feather="book-open" style="color: #00B850;"></i></span>Education</h2>
 						<div class="timeline">
 							<!-- Item -->
 							<article class="timeline__item">
-								<h5 class="title title--h4 timeline__title">University School of the Arts</h5>
-								<span class="timeline__period">2007 — 2009</span>
-								<p class="timeline__description">Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.</p>
+								<h3 class="title title--h3 timeline__title">Bachelor of Science in Cybersecurity</h3>
+                                <h5 class="title title--h5 timeline__title"><i>Brigham Young University, Provo, UT</i></h5>
+								<span class="timeline__period">2019 — 2023</span>
+								<p class="timeline__description">Relevant Coursework: <i>Info Assurance & Security, Database Principles & Application, Computer Networks, Operating Systems, Data Structures and Algorithms, Discrete Structures, Fundamentals of Web-Based Information Technology, Computer Architecture & User Experience Design</i></p>
 							</article>
                                         
 							<!-- Item -->
 							<article class="timeline__item">
-								<h5 class="title title--h4 timeline__title">New York Academy of Art</h5>
-								<span class="timeline__period">2005 — 2007</span>
-								<p class="timeline__description">Ratione voluptatem sequi nesciunt, facere quisquams facere menda ossimus, omnis voluptas assumenda est omnis..</p>
-							</article>
-                                        
-							<!-- Item -->
-							<article class="timeline__item">
-								<h5 class="title title--h4 timeline__title">High School of Art and Design</h5>
-								<span class="timeline__period">2003 — 2005</span>
-								<p class="timeline__description">Duis aute irure dolor in reprehenderit in voluptate, quila voluptas  mag odit aut fugit, sed consequuntur magni dolores eos.</p>
+								<h5 class="title title--h4 timeline__title">General Education Courses</h5>
+                                <h5 class="title title--h5 timeline__title"><i>Technical College of the Lowcountry, Beaufort, SC</i></h5>
+								<span class="timeline__period">2016 — 2017</span>
+								<p class="timeline__description">Relevant Coursework: <i>Intro to Workstations, Microcomputer Databases, Intro to Computers</i></p>
 							</article>
 						</div>
 
-						<h2 class="title title--h2 d-flex align-items-center"><span class="box box--s2 icon-box"><i class="font-icon feathericon-briefcase"></i></span>Experience</h2>
+						<h2 class="title title--h2 d-flex align-items-center"><span class="box box--s2 icon-box"><i data-feather="briefcase" style="color: #00B850;"></i></span>Experience</h2>
 						<div class="timeline">
+                            <!-- Item -->
+							<article class="timeline__item">
+								<h5 class="title title--h4 timeline__title">Student Systems Engineer</h5>
+                                <h5 class="title title--h5 timeline__title"><i>Brigham Young University Office of Information Technology</i></h5>
+								<span class="timeline__period">Feb 2022 — Present</span>
+								<p class="timeline__description">
+                                    <ul style="display: list-item;">
+                                        <li style="list-style-type: disc;">Maintain, patch and troubleshoot ESXi hypervisors, vCenter technology, and VMs</li>
+                                        <li style="list-style-type: disc;">Work with data center technology including storage, networking, and virtualization environments</li>
+                                        <li style="list-style-type: disc;">Maintain, patch, and troubleshoot Dell MX chassis, blades, and network switches</li>
+                                    </ul>
+                                </p>
+							</article>
+
 							<!-- Item -->
 							<article class="timeline__item">
-								<h5 class="title title--h4 timeline__title">Creative Director</h5>
-								<span class="timeline__period">2015 — Present</span>
-								<p class="timeline__description">Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas molestias exceptur.</p>
+								<h5 class="title title--h4 timeline__title">Network Operations Engineer Intern</h5>
+                                <h5 class="title title--h5 timeline__title"><i>The Church of Jesus Christ of Latter-Day Saints</i></h5>
+								<span class="timeline__period">Apr 2022 - Aug 2022</span>
+								<p class="timeline__description">
+                                    <ul style="display: list-item;">
+                                        <li style="list-style-type: disc;">Monitor worldwide network of applications, servers, networking, and storage devices</li>
+                                        <li style="list-style-type: disc;">Monitor and handle major incident coordination in the resolution of detected alerts</li>
+                                        <li style="list-style-type: disc;">Manage and escalate incoming alerts from applications, servers, networks, and storage devices</li>
+                                    </ul>
+                                </p>
 							</article>
                                         
 							<!-- Item -->
 							<article class="timeline__item">
-								<h5 class="title title--h4 timeline__title">Art Director</h5>
-								<span class="timeline__period">2013 — 2015</span>
-								<p class="timeline__description">Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.</p>
-							</article>
-                                        
-							<!-- Item -->
-							<article class="timeline__item">
-								<h5 class="title title--h4 timeline__title">Web Designer</h5>
-								<span class="timeline__period">2010 — 2013</span>
-								<p class="timeline__description">Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.</p>
+								<h5 class="title title--h4 timeline__title">Computer Support Representative</h5>
+                                <h5 class="title title--h5 timeline__title"><i>Brigham Young Univeristy Marriott School of Business</i></h5>
+								<span class="timeline__period">Aug 2021 — Feb 2022</span>
+								<p class="timeline__description">
+                                    <ul style="display: list-item;">
+                                        <li style="list-style-type: disc;">Analyze and diagnose software and hardware issues for 261 faculty members within the school</li>
+                                        <li style="list-style-type: disc;">Keep updated inventory of all affiliated devices, including software, warranty, and hardware updates</li>
+                                        <li style="list-style-type: disc;">Organize each support ticket by level of urgency and assign projects based on expertise</li>
+                                    </ul>
+                                </p>
 							</article>
 						</div>
 						
@@ -506,26 +523,26 @@
 						<div class="box box--s2 box-inner mb-0">
 							<!-- Web Design -->
 							<div class="progress">
-								<div class="progress-text"><span>Web Design</span> 80%</div>
-                                <div class="progress-bar"><span style="width: 80%;" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></span></div>
-                            </div>
-
-							<!-- Web Design -->
-							<div class="progress">
-								<div class="progress-text"><span>Graphic Design</span> 75%</div>
-                                <div class="progress-bar"><span style="width: 75%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></span></div>
-                            </div>
-
-							<!-- Web Design -->
-							<div class="progress">
-								<div class="progress-text"><span>Branding</span> 90%</div>
+								<div class="progress-text"><span>Networking</span> 90%</div>
                                 <div class="progress-bar"><span style="width: 90%;" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></span></div>
                             </div>
 
 							<!-- Web Design -->
 							<div class="progress">
-								<div class="progress-text"><span>Web Design</span> 50%</div>
-                                <div class="progress-bar"><span style="width: 50%;" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></span></div>
+								<div class="progress-text"><span>Cybersecurity</span> 75%</div>
+                                <div class="progress-bar"><span style="width: 75%;" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></span></div>
+                            </div>
+
+							<!-- Web Design -->
+							<div class="progress">
+								<div class="progress-text"><span>Workplace Skills</span> 95%</div>
+                                <div class="progress-bar"><span style="width: 95%;" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></span></div>
+                            </div>
+
+							<!-- Web Design -->
+							<div class="progress">
+								<div class="progress-text"><span>Programming</span> 65%</div>
+                                <div class="progress-bar"><span style="width: 65%;" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></span></div>
                             </div>
 						</div>
 			</div>
