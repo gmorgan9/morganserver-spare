@@ -17,8 +17,8 @@
 $(document).ready(function() {
   var current = document.getElementsByClassName("nav-item-link");
   $(current).click(function () {
-      $(this).addClass("active");
-      $(current).not(this).removeClass("active");
+      $(this).addClass(" active");
+      $(current).not(this).removeClass(" active");
   });
   
   });
