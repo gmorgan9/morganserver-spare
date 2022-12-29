@@ -62,6 +62,13 @@ ul{
     border-radius: 15px;
     background-color: var(--another-color);
 }
+.test-img{
+    /* margin-bottom: 25px; */
+    height: 100px;
+    width: 100px;
+    border-radius: 15px;
+    background-color: var(--another-color);
+}
 .job-title{
     padding: 5px;
     background-color: var(--another-color);
