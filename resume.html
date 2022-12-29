@@ -31,10 +31,10 @@
                 <div class="nav col">
                     <nav>
                         <ul id="nav">
-                            <li><a class="nav-item-link active" href="/">About</a></li>
-                            <li><a class="nav-item-link" href="resume.html">Resume</a></li>
-                            <li><a class="nav-item-link" href="portfolio.html">Portfolio</a></li>
-                            <li><a class="nav-item-link" href="contact.html">Contact</a></li>
+                            <li><a onclick="activate()" class="nav-item-link active" id="nav-link" href="/">About</a></li>
+                            <li><a onclick="activate()" class="nav-item-link" id="nav-link" href="resume.html">Resume</a></li>
+                            <li><a onclick="activate()" class="nav-item-link" id="nav-link" href="portfolio.html">Portfolio</a></li>
+                            <li><a onclick="activate()" class="nav-item-link" id="nav-link" href="contact.html">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -350,14 +350,13 @@
 
 <script>
 
-var btns = document.querySelectorAll(".nav-item-link");
-Array.from(btns).forEach(item => {
-   item.addEventListener("click", () => {
-      var selected = document.getElementsByClassName("active");
-      selected[0].className = selected[0].className.replace(" active", "");
-      item.className += " active";
-   });
-});
+function activate() {
+
+var a = document.getElementById("nav-link");
+
+a.classList.add(" active");
+
+}
 
 </script>
 </body>
