@@ -135,9 +135,9 @@ ul{
     -webkit-box-shadow: var(--box-shadow) var(--new-color);
 }
 
-.active {
+li .active {
     color: var(--highlight-color);
 }
-.active:hover {
+li .active:hover {
     color: var(--highlight-color);
 }
